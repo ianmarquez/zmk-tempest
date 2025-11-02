@@ -1,0 +1,140 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1000  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+    lazy;
+    ignore-modifiers;
+};
+
+&mmv {
+    acceleration-exponent = <1>;          // 1
+    time-to-max-speed-ms = <500>;         // 300
+    delay-ms = <0>;                       // 0
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
+    flavor = "tap-preferred";
+};
+
+&lt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
+    flavor = "tap-preferred";
+};
+
+/*       0   1   2   3   4      ||    5   6   7   8   9 */
+/* {10}  11  12  13  14  15     ||    16  17  18  19  20  {21} */
+/*       22  23  24  25  26     ||    27  28  29  30  31 */
+/*                   32 33 34   ||  35 36 37 */
+
+
+/ {
+
+
+    behaviors {
+        hrm_right: hrm_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow Mods Right";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
+        };
+
+        hrm_left: hrm_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Homerow Mods Left";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
+        };
+
+        tapdance_q_esc: tapdance_q_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPDANCE_Q_ESC";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp Q>, <&kp ESC>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            //          ||  Q  |  W  |  E  |  R  |  T  ||                   ||  Y  |  U   |  I  |  O  |  P  || 
+            //  [extra] ||  A  |  S  |  D  |  F  |  G  ||                   ||  H  |  J   |  K  |  L  |  ;  ||  [extra] 
+            //          ||  Z  |  X  |  C  |  V  |  B  ||                   ||  N  |  M   |  ,  |  .  |  /  || 
+            //                               | ESC | SPC | TAB ||   || ENT | BKS | SFT  |
+
+            bindings = <
+         &kp Q                 &kp W              &kp E                 &kp R              &kp T        &kp Y            &kp U               &kp I              &kp O               &kp P
+&trans   &hrm_left LEFT_ALT A  &hrm_left LCTRL S  &hrm_left LEFT_WIN D  &hrm_left LSHFT F  &kp G        &kp H            &hrm_right RSHFT J  &hrm_right RGUI K  &hrm_right LCTRL L  &hrm_right RALT SEMICOLON   &trans
+         &kp Z                 &kp X              &kp C                 &kp V              &kp B        &kp N            &kp M               &kp COMMA          &kp DOT             &kp FSLH
+                                                  &kp ESC               &lt 1 SPACE        &lt 4 TAB    &mt RCTRL ENTER  &lt 2 BSPC          &kp RSHFT
+            >;
+        };
+
+        symbols {
+            bindings = <
+          &kp EXCL                  &kp AT                        &kp POUND                    &kp DOLLAR                    &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PIPE                 &kp AMPERSAND                  &kp ASTERISK       &kp CARET
+&trans    &hrm_left LEFT_ALT GRAVE  &hrm_left LCTRL SINGLE_QUOTE  &hrm_left LEFT_GUI KP_MINUS  &hrm_left LEFT_SHIFT KP_PLUS  &kp LEFT_BRACE          &kp RIGHT_BRACE        &hrm_right RSHIFT UNDER  &hrm_right RIGHT_GUI KP_EQUAL  &kp DOUBLE_QUOTES  &kp TILDE      &trans
+          &kp LS(SLASH)             &kp SEMI                      &kp LT                       &kp PERCENT                   &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp BACKSLASH            &kp GT                         &kp COLON          &kp QUESTION
+                                                                  &trans                       &trans                        &trans                  &trans                 &trans                   &trans
+            >;
+        };
+
+        numbers {
+            bindings = <
+       &kp N1    &kp N2     &kp N3    &kp N4     &kp N5      &kp N6    &kp N7                       &kp N8                       &kp N9                  &kp N0
+&trans &kp LALT  &kp LCTRL  &kp LGUI  &kp LSHFT  &kp TAB     &kp LEFT  &hrm_right RIGHT_SHIFT DOWN  &hrm_right RIGHT_COMMAND UP  &hrm_right RCTRL RIGHT  &kp RIGHT_ALT  &trans
+       &trans    &trans     &trans    &trans     &trans      &trans    &trans                       &trans                       &trans                  &trans
+                            &trans    &trans     &mo 3       &trans    &trans                       &trans
+            >;
+        };
+
+
+        bluetooth {
+            bindings = <
+           &trans       &trans  &trans  &trans  &trans    &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans     &trans       &trans  &trans  &trans  &trans    &bt BT_CLR       &bt BT_CLR_ALL  &trans        &trans        &trans           &trans
+           &bootloader  &trans  &trans  &trans  &trans    &studio_unlock   &trans          &trans        &trans        &bootloader
+                                &trans  &trans  &trans    &trans           &trans          &trans
+            >;
+        };
+
+
+        mouse {
+            bindings = <
+          &kp ESC &trans  &trans     &trans      &trans    &trans            &kp F5          &kp F12       &trans           &trans
+&trans    &trans  &trans  &mkp LCLK  &mkp RCLK   &trans    &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans    &trans
+          &trans  &trans  &trans     &trans      &trans    &msc SCRL_LEFT    &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                          &trans     &trans      &trans    &kp RC(UP_ARROW)  &kp F11         &trans
+            >;
+        };
+
+    };
+};
