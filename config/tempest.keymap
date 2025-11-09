@@ -20,7 +20,7 @@
     delay-ms = <0>;                       // 0
 };
 
-#define U_TAPPING_TERM 220
+#define U_TAPPING_TERM 180
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
 &mt {
