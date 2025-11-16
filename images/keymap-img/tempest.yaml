@@ -33,12 +33,12 @@ layers:
   - ','
   - .
   - /
+  - ESC
   - {t: SPACE, h: symbols}
   - {t: TAB, h: mouse}
-  - ESC
-  - RSHFT
   - {t: ENTER, h: RCTRL}
   - {t: BSPC, h: numbers}
+  - RSHFT
   symbols:
   - '!'
   - '@'
@@ -72,8 +72,8 @@ layers:
   - '>'
   - ':'
   - '?'
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -115,8 +115,8 @@ layers:
   - bluetooth
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   bluetooth:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -154,8 +154,8 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
+  - {t: ▽, type: trans}
   mouse:
   - ESC
   - {t: ▽, type: trans}
@@ -190,8 +190,8 @@ layers:
   - '&msc SCRL_RIGHT'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - Ctl+UP ARROW
   - F11
+  - {t: ▽, type: trans}
