@@ -58,7 +58,6 @@
             flavor = "tap-preferred";
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
         };
-
         hrm_left: hrm_left {
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mods Left";
@@ -100,19 +99,19 @@
 
         symbols {
             bindings = <
-          &kp EXCL                  &kp AT                        &kp POUND                    &kp DOLLAR                    &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PIPE                 &kp AMPERSAND                  &kp ASTERISK       &kp CARET
-&trans    &hrm_left LEFT_ALT GRAVE  &hrm_left LCTRL SINGLE_QUOTE  &hrm_left LEFT_GUI KP_MINUS  &hrm_left LEFT_SHIFT KP_PLUS  &kp LEFT_BRACE          &kp RIGHT_BRACE        &hrm_right RSHIFT UNDER  &hrm_right RIGHT_GUI KP_EQUAL  &kp DOUBLE_QUOTES  &kp TILDE      &trans
-          &kp LS(SLASH)             &kp SEMI                      &kp LT                       &kp PERCENT                   &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp BACKSLASH            &kp GT                         &kp COLON          &kp QUESTION
-                                                                  &trans                       &trans                        &trans                  &trans                 &trans                   &trans
+          &kp EXCL                  &kp AT                        &kp POUND                    &kp DOLLAR               &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PIPE                 &kp AMPERSAND                  &kp ASTERISK       &kp CARET
+&trans    &hrm_left LEFT_ALT GRAVE  &hrm_left LCTRL SINGLE_QUOTE  &hrm_left LEFT_GUI KP_MINUS  &hrm_left LSHFT KP_PLUS  &kp LEFT_BRACE          &kp RIGHT_BRACE        &hrm_right LSHFT UNDER  &hrm_right RIGHT_GUI KP_EQUAL  &kp DOUBLE_QUOTES  &kp TILDE      &trans
+          &kp LS(SLASH)             &kp SEMI                      &kp LT                       &kp PERCENT              &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp BACKSLASH            &kp GT                         &kp COLON          &kp QUESTION
+                                                                  &trans                       &trans                   &trans                  &trans                 &trans                   &trans
             >;
         };
 
         numbers {
             bindings = <
-       &kp N1    &kp N2     &kp N3    &kp N4     &kp N5      &kp N6    &kp N7                       &kp N8                       &kp N9                  &kp N0
-&trans &kp LALT  &kp LCTRL  &kp LGUI  &kp LSHFT  &kp TAB     &kp LEFT  &hrm_right RIGHT_SHIFT DOWN  &hrm_right RIGHT_COMMAND UP  &hrm_right RCTRL RIGHT  &kp RIGHT_ALT  &trans
-       &trans    &trans     &trans    &trans     &trans      &trans    &trans                       &trans                       &trans                  &trans
-                            &trans    &mo 3      &trans      &trans    &trans                       &trans
+       &kp N1    &kp N2     &kp N3    &kp N4     &kp N5      &kp N6    &kp N7                 &kp N8                       &kp N9                  &kp N0
+&trans &kp LALT  &kp LCTRL  &kp LGUI  &kp LSHFT  &kp TAB     &kp LEFT  &hrm_right LSHFT DOWN  &hrm_right RIGHT_COMMAND UP  &hrm_right RCTRL RIGHT  &kp RIGHT_ALT  &trans
+       &trans    &trans     &trans    &trans     &trans      &trans    &trans                 &trans                       &trans                  &trans
+                            &trans    &mo 3      &trans      &trans    &trans                 &trans
             >;
         };
 
