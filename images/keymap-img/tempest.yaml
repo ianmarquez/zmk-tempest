@@ -54,10 +54,10 @@ layers:
   - {t: '`', h: LEFT ALT}
   - {t: '''', h: LCTRL}
   - {t: KP MINUS, h: LEFT GUI}
-  - {t: KP PLUS, h: LEFT SHIFT}
+  - {t: KP PLUS, h: LSHFT}
   - '{'
   - '}'
-  - {t: _, h: RSHIFT}
+  - {t: _, h: LSHFT}
   - {t: KP EQUAL, h: RIGHT GUI}
   - '"'
   - '~'
@@ -96,7 +96,7 @@ layers:
   - LSHFT
   - TAB
   - LEFT
-  - {t: DOWN, h: RIGHT SHIFT}
+  - {t: DOWN, h: LSHFT}
   - {t: UP, h: RIGHT COMMAND}
   - {t: RIGHT, h: RCTRL}
   - RIGHT ALT
