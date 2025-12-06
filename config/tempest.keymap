@@ -18,11 +18,11 @@
 
 &mmv {
     acceleration-exponent = <1>;          // 1
-    time-to-max-speed-ms = <600>;         // 300
+    time-to-max-speed-ms = <1000>;         // 300
     delay-ms = <0>;                       // 0
 };
 
-#define U_TAPPING_TERM 185
+#define U_TAPPING_TERM 200
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 
 &mt {
