@@ -18,10 +18,10 @@ layers:
   - {t: F, h: LSHFT}
   - G
   - H
-  - {t: J, h: RSHFT}
+  - {t: J, h: LEFT SHIFT}
   - {t: K, h: RGUI}
   - {t: L, h: LCTRL}
-  - {t: ;, h: RALT}
+  - {t: ;, h: LALT}
   - {t: ▽, type: trans}
   - Z
   - X
@@ -79,22 +79,22 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   numbers:
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
+  - {t: ▽, type: trans}
+  - '0'
   - '7'
   - '8'
   - '9'
-  - '0'
   - {t: ▽, type: trans}
-  - LALT
-  - LCTRL
-  - LGUI
-  - LSHFT
-  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '4'
+  - '5'
+  - '6'
   - LEFT
   - {t: DOWN, h: LSHFT}
   - {t: UP, h: RIGHT COMMAND}
@@ -103,9 +103,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '1'
+  - '2'
+  - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
